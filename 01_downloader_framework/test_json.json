@@ -1,0 +1,8 @@
+{
+  "ip_address": "127.0.0.1",
+  "username" : "osama",
+  "password": "some_random_password",
+  "time_window": "15:51-16:46",
+  "source_path": "/home/osama/Downloads",
+  "destination_path": "C:\\Users\\iqbal\\New Folder"
+}
