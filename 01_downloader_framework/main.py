@@ -1,32 +1,22 @@
 """
 Author: Osama Iqbal
-This particular file is the crux of the downloader framework.
-
-The assumption here is that the configuration would be provided on the command line,
-though there is a provision of making a JSON file consisting of key/values that will be
-parsed for taking the parameters to run the script.
-
-There is another assumption, since the 4th point in the question states a "Time Window".
-The assumption is that this script will run perpetually, and
 
 1. Run the file by executing
-    ```python.exe 01_downloader_framework/main.py -i <ip_address> -u <username> -p <password> -s <source_path> -d <destination_path> -t <time_in_24_hr_format>```
+    ```python.exe 01_downloader_framework/main.py -i <ip_address> -u <username> -p <password> -s <source_path> -d <destination_path> -t <time_in_24_hr_format-end_time_period>```
     assuming your working directory is "AlphaGrepTakeHomeTest"
-2. There are other optional parameters, like ```-n <True/False>``` which stands for "nested", that
-is, whether to download sub-folders or not.
-3. ```-t``` parameter is also optional, if not provided, the script starts running immidiately
-4. ```-j <path_to_json_file>``` one can use the -j parameter to pass in a JSON file with the keys and values
+2. ```-t``` parameter is also optional, if not provided, the script starts running immediately. When provided without a "-"
+it will default run for 1 hour. Else, the "-" will be split upon by the code to get start and end times.
+3. ```-j <path_to_json_file>``` one can use the -j parameter to pass in a JSON file with the keys and values
     as
     ```
    {
-     "ip_address": 127.0.0.1,
-     "username" : "the_username",
-     "password": "the_password",
-     "timestamp": "17:30",
-     "nested": true,
-     "source_path": "/source/path",
-     "destination_path": "/destination/path"
-   }
+   "ip_address": "127.0.0.1",
+   "username" : "osama",
+   "password": "some_random_password",
+   "time_window": "15:51-16:46",
+   "source_path": "/home/osama/Downloads",
+   "destination_path": "C:\\Users\\iqbal\\New Folder"
+}
    ```
 
 """

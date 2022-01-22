@@ -38,7 +38,7 @@ polling it there.
 We could also fire a remote command for the watchdog to keep polling the folder from the
 client side script, but that complicates things from a code maintenance standpoint.
 
-1. Run the file by executing
+1. Run the file by executing (python 3 required since f-strings are used!)
     ```python.exe 01_downloader_framework/main.py -i <ip_address> -u <username> -p <password> -s <source_path> -d <destination_path> -t <time_in_24_hr_format-end_time_period>```
     assuming your working directory is "AlphaGrepTakeHomeTest"
 2. ```-t``` parameter is also optional, if not provided, the script starts running immediately. When provided without a "-"
@@ -47,11 +47,11 @@ it will default run for 1 hour. Else, the "-" will be split upon by the code to 
     as 
     ```
    {
-     "ip_address": "127.0.0.1",
-     "username" : "the_username",
-     "password": "the_password",
-     "time_window": "17:30-17:45",
-     "source_path": "/source/path",
-     "destination_path": "/destination/path"
-   }
+   "ip_address": "127.0.0.1",
+   "username" : "osama",
+   "password": "some_random_password",
+   "time_window": "15:51-16:46",
+   "source_path": "/home/osama/Downloads",
+   "destination_path": "C:\\Users\\iqbal\\New Folder"
+}
    ```
