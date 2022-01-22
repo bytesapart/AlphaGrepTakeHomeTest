@@ -120,6 +120,9 @@ def main():
     except Exception as error:
         log.exception(error)
 
+    finally:
+        logging.shutdown()
+
 
 if __name__ == '__main__':
     # Initialize the logger
