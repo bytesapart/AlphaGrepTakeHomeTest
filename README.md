@@ -103,7 +103,7 @@ grasp on Unit Tests and the like, hence, did not add Unit Tests for other progra
 
 This one has only one assumption. The assumption is that the id_rsa file is ```Problem3\id_rsa```
 for password-less login. I've tested this on WSL machine, and it works with my username ```osama```.
-Therefore, the code does contain a few "hard-coded" ```username='osama``` and ```private_key=Problem3\id_rsa```
+Therefore, the code does contain a "hard-coded" ```username='osama``` and ```private_key=Problem3\id_rsa```
 
 The other most important thing is that this needs ```pandas>1.4.0``` (fulfilled with requirements.txt)
 since that version has a callable for ```bad_lines``` which is there in one of the summary files.
