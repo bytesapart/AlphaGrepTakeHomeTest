@@ -1,0 +1,27 @@
+[20.30.40.50]
+/home/user/LIMIT/
+/home/user/FUTURES_Part1/
+/home/user/NEWFUTURES/
+[20.30.40.51]
+/home/user/LIMIT_Part2/
+/home/user/GFD/
+/home/user/INDEX/
+[20.30.40.52]
+/home/user/LIMIT_Part3/
+/home/user/NEWSTRAT_Part2/
+/home/user/GFD_Part2/
+/home/user/INDEX_Part2/
+# [20.30.40.50]
+# /home/user/LIMIT/
+# /home/user/FUTURES_Part1/
+# /home/user/NEWFUTURES/
+# [127.0.0.1]
+# /home/user/LIMIT_Part2/
+# /home/osama/GFD/
+# /home/user/INDEX/
+# [127.0.0.1]
+# /home/user/LIMIT_Part3/
+# /home/user/NEWSTRAT_Part2/
+# /home/osama/GFD_Part2/
+# /home/user/INDEX_Part2/
+

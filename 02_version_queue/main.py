@@ -281,7 +281,6 @@ def main():
         validate_args(args)
         args = sanitise_args(args)
         process_queue(args, Mode.COMPUTE)
-        print()
 
     except Exception as error:
         log.exception(error)
