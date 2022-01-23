@@ -94,7 +94,7 @@ but not that slow either. Again, requires replication of the queue.
 2. Then add the number of operations, followed by the operations on the screen.
 3. There is also a unit test using the ```unittest``` in-built library, that contains the 
 "helper" program that the email needed in order to run the script. Also, this demonstrates
-grasp on Unit Tests and the like, hence, did not add Unit Tests for other programs
+grasp on Unit Tests and the like, hence, did not add Unit Tests for other programs.
 
 <hr>
 
