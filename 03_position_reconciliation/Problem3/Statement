@@ -1,0 +1,41 @@
+The folder "Problem3" (zipped and attached in mail) contains a number of trading summary files (ending with "_Summary"), a position limits file ("PositionLimits_Start.cfg") and a "directory" file containing a list of servers and folder names on each server. Each summary file contains a summary of trades done on a server, broken down by log file name. 
+
+The name of the log file is in the first column, the instrument is in the second column and the position in that instrument in the 4th column. You can ignore the remaining columns for the purpose of this problem.
+
+Position Limit file is formatted as : ticker_MAXLONGPOS = value . for each ticker, there will be MAXSHORTPOS, MAXLONGEXPOSURE and MAXSHORTEXPOSURE values in addition to MAXLONGPOS.
+
+The directory file contains the names of folders where position limit files are kept on each server. Its structure is as follows:
+[Server1]
+Folder 1 of Server 1
+Folder 2 of Server 1
+[Server2]
+Folder 1 of Server 2
+
+Your task is to combine instrument positions from different summary files.
+
+Write a python script that will:
+- Take a string, eg. "ABC", "PositionLimits_Start.cfg" file and "directory" file as inputs;
+- Generate a list of combined positions for each instrument by combining positions from each summary file for log names containing "ABC" as a substring;
+- Make a copy of the PositionLimits_Start.cfg file called PositionLimits.cfg, and update all MAXLONGPOS, MAXSHORTPOS, MAXLONGEXPOSURE and MAXSHORTEXPOSURE fields by the combined position of each instrument. 
+    * For example, if the Start file has a MAXLONGPOS = 1000, MAXSHORTPOS = 900 etc. in instrument ABC, it means that for stock ABC , at any moment, one is allowed to buy upto 1000 shares unhedged, or sell 900 shares unhedged.
+    * If the combined position in this instrument is currently 200 (i.e. 200 shares are bought unhedged), adjust values such that MAXLONGPOS = 800 , MAXSHORTPOS = 1100, and similarly for EXPOSURE fields.
+    * If the combined position in this instrument is currently -200 (i.e. 200 shares are sold unhedged), adjust values such that MAXLONGPOS = 1200 , MAXSHORTPOS = 700, and similarly for EXPOSURE fields.
+- Go through the "directory" file, and for each folder name that contains the string "ABC", scp a copy of the new PositionLimits.cfg file into that folder on that server. 
+
+You can assume password less ssh from the server running the script to each server listed in the file. 
+
+Example: input string = "GFD"
+For the instrument NSE_FO_BHP_1703, there is a position of:
+6800 under section out_GFD_994 in 20.30.40.51_Summary
+-20000 under section out_GFD_Part2 in 20.30.40.52_Summary
+
+The total position is -13200
+In the PositionLimits_Start.cfg file, the NSE_FO_BHP_1703_MAXLONGPOS = 200000. In the new file, change this to 213200 and change NSE_FO_BHP_1703_MAXSHORTPOS to 186800. Change the MAXLONGEXPOSURE and MAXSHORTEXPOSURE to 263200 and 236800 respectively.
+
+Repeat this for all instruments.
+
+The folders containing "GFD" are:
+/home/user/GFD/ on 20.30.40.51
+/home/user/GFD_Part2/ on 20.30.40.52
+
+scp the new PositionLimits.cfg file to these folders on their respective servers.
